@@ -3,7 +3,7 @@ public:
     int majorityElement(vector<int>& nums) {
         int n = nums.size();
         int el = nums[0];
-        int freq = 1;
+        int freq = 0;
         for(int i=1 ; i<n ; i++)
         {
             if(el == nums[i])
@@ -13,7 +13,7 @@ public:
             else if (freq == 0)
             {
                 el = nums[i];
-                freq=1;
+                freq=0;
             }
             else{
                 freq --;
