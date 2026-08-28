@@ -13,7 +13,7 @@ public:
             else if (freq == 0)
             {
                 el = nums[i];
-                freq=0;
+            
             }
             else{
                 freq --;
