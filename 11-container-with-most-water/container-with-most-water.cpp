@@ -19,19 +19,26 @@ public:
         // return max_water;
 
         //two pointer approach
-          int ans =0;
-          int lp = 0;
-          int max_water = 0; // ans
-          int rp = n-1;
-          while(lp<rp)
-          {
-            int w = rp - lp;
-            int ht = min(height[lp],height[rp]);
-            int cw  = w*ht;//current water
-            max_water = max(max_water,cw);
-            height[lp]<height[rp] ? lp++ :rp--;
-          }
-          return max_water;
+        int ans =0;
+        int lp = 0;
+        int max_water = 0; // ans
+        int rp = n-1;
+        while(lp<rp)
+        {
+          int w = rp - lp;
+         int ht = min(height[lp],height[rp]);
+         int cw  = w*ht;//current water
+        max_water = max(max_water,cw);
+        if (height[lp] < height[rp])
+        {
+            lp++;
+        }
+        else
+        {
+            rp--;
+        }
+        }
+        return max_water;
 
     }
 };
